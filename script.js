@@ -3,21 +3,29 @@ const listcontainer = document.querySelector('.listContainer')
 const btn = document.querySelector('#btn')
 
 
-//Add items list
-btn.addEventListener('click', ()=>{
-if(inputBox.value === ''){
-        alert('Type something!')
+//Function for add item
+function addItem(){
+    if(inputBox.value === ''){
+        alert("plz enter item name")
     }
     else{
-       let li = document.createElement("li");
-       li.innerText = inputBox.value
-       listcontainer.append(li);
-       let span= document.createElement("span")
-       span.innerHTML = "x";
-       li.appendChild(span)
+        let li = document.createElement("li")
+        li.innerText = inputBox.value
+        listcontainer.append(li)
+
+        let span = document.createElement("span")
+        span.innerText = "x"
+        li.append(span)
+
+        inputBox.value = ''
+        saveData();
     }
-    inputBox.value = ''
-    saveData();
+}
+btn.addEventListener('click', addItem)
+inputBox.addEventListener('keydown', (e)=>{
+    if(e.key === "Enter"){
+     addItem();
+    }
 })
 
 //For checked and delete
