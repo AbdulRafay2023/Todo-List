@@ -100,14 +100,17 @@ ul li span{
     width: 1.2rem;
     height: 1.2rem;
     font-size: 1rem;
-    color: white;
-    background-color: #ff0000;
-    border-radius: 50%;
+    color: gray;
     cursor: pointer;    
     text-align: center;
+    border-radius: 50%;
+    border: 1px solid gray;
 
 }
 
 ul li span:hover{
-    background-color: #ff4d4d;
+    color: white;
+    background-color: #ff0000;
+    border-radius: 50%;
+
 }
